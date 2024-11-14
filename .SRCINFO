@@ -1,0 +1,15 @@
+pkgbase = r8169-dkms
+    pkgdesc = A kernel module for Realtek 8168/8169 network cards from tree (DKMS version) (betel)
+    pkgver = next
+    pkgrel = 1
+    url = https://github.com/lustryrose882/r8169-dkms
+    arch = i686
+    arch = x86_64
+    license = GPL
+    depends = glibc
+    depends = dkms
+    provides = r8169
+    conflicts = r8169 r8168
+    source = dkms.conf
+
+pkgname = r8169-dkms
