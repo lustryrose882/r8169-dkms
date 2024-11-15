@@ -20,9 +20,5 @@ package() {
 	    -e "s/@PKGVER@/${pkgver}/g" \
 	    -i "${pkgdir}/usr/src/${_pkgbase}-${pkgver}/dkms.conf"
 
-	ls -l
 	cp -dr --no-preserve='ownership' "./${_pkgbase}" "${pkgdir}/usr/src/${_pkgbase}-${pkgver}/src"
-
-	echo "blacklist r8169" | \
-		install -Dm644 '/dev/stdin' "$pkgdir/usr/lib/modprobe.d/$pkgname.conf"
 }
