@@ -25,18 +25,3 @@ ifeq ($(CONFIG_8139TOO), y)
 	r8169-objs += 8139too.o
 	EXTRA_CFLAGS += -DCONFIG_8139TOO
 endif
-
-.PHONY: all
-all: clean modules install
-
-.PHONY: modules
-modules:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
-
-.PHONY: clean
-clean:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
-
-.PHONY: install
-install:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) INSTALL_MOD_DIR=$(RTKDIR) modules_install
